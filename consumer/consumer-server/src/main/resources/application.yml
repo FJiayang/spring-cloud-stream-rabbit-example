@@ -1,0 +1,12 @@
+spring:
+  rabbitmq:
+    host: docker-1.fjy8018.cn
+    username: cms
+    password: cms-mq-admin
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: my-test-channel
+server:
+  port: 8081
