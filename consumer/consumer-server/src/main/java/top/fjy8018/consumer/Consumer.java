@@ -13,6 +13,6 @@ import top.fjy8018.consumer.common.MySink;
 public class Consumer {
     @StreamListener(MySink.INPUT)
     public void receive(Message<String> message) {
-        System.out.println("接收到MQ消息:" + message);
+        System.out.println("接收到MQ消息:" + message.getPayload());
     }
 }

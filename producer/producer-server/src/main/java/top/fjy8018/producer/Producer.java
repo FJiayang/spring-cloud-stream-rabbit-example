@@ -20,12 +20,11 @@ import java.util.Date;
 public class Producer {
 
     @Autowired
-    @Output(MySource.OUTPUT)
-    private MessageChannel channel;
+    private MySource channel;
 
     @RequestMapping("/send")
     public String send() {
-        channel.send(MessageBuilder.withPayload(new Date()).build());
+        channel.output().send(MessageBuilder.withPayload(new Date()).build());
         return "success";
     }
 }

@@ -1,6 +1,6 @@
 spring:
   rabbitmq:
-    host: docker-1.fjy8018.cn
+    host: 192.168.163.128
     username: cms
     password: cms-mq-admin
   cloud:

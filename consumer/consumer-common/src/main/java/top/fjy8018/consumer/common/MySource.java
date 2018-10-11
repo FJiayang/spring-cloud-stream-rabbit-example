@@ -10,6 +10,6 @@ import org.springframework.messaging.MessageChannel;
 public interface MySource {
     String OUTPUT = "output";
 
-    @Output("output")
+    @Output(MySource.OUTPUT)
     MessageChannel output();
 }

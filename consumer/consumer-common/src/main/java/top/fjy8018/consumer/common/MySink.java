@@ -11,6 +11,6 @@ import org.springframework.messaging.SubscribableChannel;
 public interface MySink {
     String INPUT = "input";
 
-    @Input(Sink.INPUT)
+    @Input(MySink.INPUT)
     SubscribableChannel input();
 }
