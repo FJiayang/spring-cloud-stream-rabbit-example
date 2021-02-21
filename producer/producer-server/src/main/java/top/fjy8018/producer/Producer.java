@@ -21,13 +21,13 @@ public class Producer {
 
     @RequestMapping("/send1")
     public String send1() {
-        streamBridge.send("source1-out-0", new Date());
+        streamBridge.send("send1", new Date());
         return "success1";
     }
 
     @RequestMapping("/send2")
     public String send2() {
-        streamBridge.send("source2-out-0", LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+        streamBridge.send("send2", LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         return "success2";
     }
 

@@ -7,12 +7,16 @@ spring:
   cloud:
     stream:
       bindings:
-        source1-out-0:
+        send1:
           destination: test2
-        source2-out-0:
+        send2:
           destination: test3
-    function:
-      definition: source1;source2
+      function:
+        # 定义别名
+        bindings:
+          source1-in-0: send1
+          source2-in-0: send2
+        definition: source1;source2
 
 
 server:

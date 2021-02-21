@@ -7,13 +7,16 @@ spring:
   cloud:
     stream:
       bindings:
-        sink1-in-0:
+        send1:
           destination: test2
-        sink2-in-0:
+        send2:
           destination: test3
-    function:
-      definition: sink1;sink2
-
+      function:
+        # 定义别名
+        bindings:
+          sink1-in-0: send1
+          sink2-in-0: send2
+        definition: sink1;sink2
 
 server:
   port: 8081
