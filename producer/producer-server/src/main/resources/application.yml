@@ -1,8 +1,8 @@
 spring:
   rabbitmq:
-    host: 192.168.163.128
-    username: cms
-    password: cms-mq-admin
+    host: 192.168.133.128
+    username: dev-user
+    password: devpassword
   cloud:
     stream:
       bindings:
