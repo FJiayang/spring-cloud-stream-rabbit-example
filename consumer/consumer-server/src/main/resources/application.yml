@@ -9,8 +9,10 @@ spring:
       bindings:
         sink1-in-0:
           destination: test2
+        sink2-in-0:
+          destination: test3
     function:
-      definition: sink1
+      definition: sink1;sink2
 
 
 server:

@@ -9,8 +9,10 @@ spring:
       bindings:
         source1-out-0:
           destination: test2
+        source2-out-0:
+          destination: test3
     function:
-      definition: source1
+      definition: source1;source2
 
 
 server:

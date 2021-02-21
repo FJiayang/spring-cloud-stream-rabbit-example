@@ -5,6 +5,8 @@ import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -17,10 +19,16 @@ public class Producer {
     @Autowired
     private StreamBridge streamBridge;
 
-    @RequestMapping("/send")
-    public String send() {
+    @RequestMapping("/send1")
+    public String send1() {
         streamBridge.send("source1-out-0", new Date());
-        return "success";
+        return "success1";
+    }
+
+    @RequestMapping("/send2")
+    public String send2() {
+        streamBridge.send("source2-out-0", LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+        return "success2";
     }
 
 }

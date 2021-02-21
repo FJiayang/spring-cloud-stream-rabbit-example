@@ -18,4 +18,9 @@ public class ConsumerApplication {
     public Consumer<Date> sink1() {
         return System.out::println;
     }
+
+    @Bean
+    public Consumer<String> sink2() {
+        return System.out::println;
+    }
 }
