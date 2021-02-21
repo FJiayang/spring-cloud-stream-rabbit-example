@@ -3,10 +3,15 @@ spring:
     host: 192.168.133.128
     username: dev-user
     password: devpassword
+
   cloud:
     stream:
       bindings:
-        input:
-          destination: my-test-channel
+        sink1-in-0:
+          destination: test1
+    function:
+      definition: sink1
+
+
 server:
   port: 8081

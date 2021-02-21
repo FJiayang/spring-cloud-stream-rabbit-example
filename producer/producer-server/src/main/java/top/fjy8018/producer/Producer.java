@@ -1,12 +1,11 @@
 package top.fjy8018.producer;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import top.fjy8018.consumer.common.MySource;
 
 import java.util.Date;
+import java.util.function.Supplier;
 
 /**
  * @author F嘉阳
@@ -16,11 +15,11 @@ import java.util.Date;
 public class Producer {
 
     @Autowired
-    private StreamBridge streamBridge;
+    private Supplier<Date> supplier;
 
     @RequestMapping("/send")
     public String send() {
-        streamBridge.send(MySource.OUTPUT, new Date());
+        supplier.get();
         return "success";
     }
 
