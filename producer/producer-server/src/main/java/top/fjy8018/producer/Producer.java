@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import top.fjy8018.consumer.common.MySource;
 
 import java.util.Date;
 
@@ -20,7 +19,7 @@ public class Producer {
 
     @RequestMapping("/send")
     public String send() {
-        streamBridge.send(MySource.OUTPUT, new Date());
+        streamBridge.send("source1-out-0", new Date());
         return "success";
     }
 

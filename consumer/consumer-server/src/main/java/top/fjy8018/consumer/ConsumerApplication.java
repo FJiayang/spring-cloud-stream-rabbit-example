@@ -15,7 +15,7 @@ public class ConsumerApplication {
     }
 
     @Bean
-    public Consumer<Date> receive() {
+    public Consumer<Date> sink1() {
         return System.out::println;
     }
 }
